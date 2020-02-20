@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Employee list";
+}
+
+<h2>Employee CRUD Operation</h2>
+
+<a class="btn btn-success" style="margin-bottom:10px" onclick="popupFrom('@Url.Action("AddorEdit","Employee")')"><i class="fa fa-plus"></i></>Add New</a>
+
+<table id="employeeTable" class="table table-striped table-bordered" style="width:100%">
+  <thead>
+      <tr>  
+          <th>Employee ID</th>
+          <th>position</th>
+          <th>office</th>
+          <th>age</th>
+          <th>salary</th>
+       </tr>
+   </thead>
+</table>
+@*<link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">*@
+<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+@section Scripts{
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+
+    <script>
+        var popup,datatabel;
+        $(document).ready(function () {
+            
+          datatabel=  $("#employeeTable").dataTable({
+                "ajax": {
+                    "url": "/employee/GetData",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columes":
+                   [
+                    { "data": "Name" },
+                    { "data": "position" },
+                    { "data": "office" },
+                    { "data": "age" },
+                    { "data": "salary" }
+                   ],
+                "language":{
+                "employee":"No Data found,Plase Click on <br>Add New</br> Button"
+                }   
+
+            });
+        });
+        function popupFrom(url){
+            var fromDiv=$('/div');
+            $.get(url)
+            .done(function(response){
+            fromDiv.html(response);
+            
+                popup=fromDiv.dielog({
+                    autoOpen:true,
+                    resizeable:false,
+                    title:'Fill Employee Details',
+                    height:500,
+                    width:700,
+                    close :function()
+                    {popup.dielog("destroy").remove();
+                    }
+                });
+            });
+         }
+        
+   </script>
+ }

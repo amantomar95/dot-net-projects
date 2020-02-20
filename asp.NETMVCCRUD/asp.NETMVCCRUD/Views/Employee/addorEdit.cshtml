@@ -1,0 +1,37 @@
+﻿@model asp.NETMVCCRUD.Models.Employee
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("AddorEdit","Employee",FormMethod.Post))
+{
+     @Html.HiddenFor(model => model.EmployeeID)
+    <div class="from-group">
+        @Html.LabelFor(model => model.Name, new {@class ="Control-Label"})
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class ="form-control" } });
+    </div>
+     <div class="from-group">
+        @Html.LabelFor(model => model.Position, new {@class ="Control-Label"})
+        @Html.EditorFor(model => Model.Position, new { htmlAttributes = new { @class ="form-control" } });
+    </div>
+     <div class="from-group">
+        @Html.LabelFor(model => model.Office, new {@class ="Control-Label"})
+        @Html.EditorFor(model => model.Office, new { htmlAttributes = new { @class ="form-control" } });
+    </div>
+     <div class="from-group">
+        @Html.LabelFor(model => model.Age, new {@class ="Control-Label"})
+        @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class ="form-control" } });
+    </div>
+     <div class="from-group">
+        @Html.LabelFor(model => model.Salary, new {@class ="Control-Label"})
+         <div class="input-group">
+             <span class="input-group-addon">$</span>
+             @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control" } });
+         </div>
+    </div>
+     <div class="from-group">
+         <input type="submit" value="Submit" class="btn btn-primary">
+         <input type="reset" value="reset" class="btn">
+    </div>
+   
+}

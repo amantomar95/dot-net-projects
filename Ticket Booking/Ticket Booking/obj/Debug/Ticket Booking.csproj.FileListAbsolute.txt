@@ -1,0 +1,6 @@
+C:\Users\Aman\Desktop\dot net project\Ticket Booking\Ticket Booking\bin\Ticket Booking.dll.config
+C:\Users\Aman\Desktop\dot net project\Ticket Booking\Ticket Booking\bin\Ticket Booking.dll
+C:\Users\Aman\Desktop\dot net project\Ticket Booking\Ticket Booking\bin\Ticket Booking.pdb
+C:\Users\Aman\Desktop\dot net project\Ticket Booking\Ticket Booking\obj\Debug\Ticket Booking.csprojResolveAssemblyReference.cache
+C:\Users\Aman\Desktop\dot net project\Ticket Booking\Ticket Booking\obj\Debug\Ticket Booking.dll
+C:\Users\Aman\Desktop\dot net project\Ticket Booking\Ticket Booking\obj\Debug\Ticket Booking.pdb
